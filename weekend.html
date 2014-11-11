@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+   <head> 
+      <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+      <script>
+        $(document).ready(function(){
+
+      $.getJSON('http://cooper-union-instagram-proxy.herokuapp.com/search/tag/itsthefreakinweekend', function(response){
+        console.log(response);
+
+        for(var i=0; i<response.length; i++) {
+          var img = '<img src=' + response[i].images.standard_resolution.url + ' />';
+          $("body").append(img);
+
+          
+        }
+
+      })
+
+       $.getJSON("http://cooper-union-search-proxy.herokuapp.com/twitter/search/itsthefreakinweekend/", function(response){ 
+       })
+
+    });
+      </script>
+    </head>
+    <body>
+    </body>
+
+
+</html>
